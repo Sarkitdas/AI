@@ -32,6 +32,25 @@ bfs(graph, '5')    # function calling
 
 #DFS
 
+def dfs(graph, node, visited):
+    visited.append(node)
+    for i in graph[node]:
+        if i not in visited:
+            dfs(graph, i, visited)
+
+graph = {
+    '5': ['3', '7'],
+    '3': ['2', '4'],
+    '7': ['8'],
+    '2': [],
+    '4': ['8'],
+    '8': []
+}
+
+visited = []
+print("Following is the Depth-First Search")
+dfs(graph, '5', visited)
+print(visited)
 
 
 
