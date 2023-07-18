@@ -1,0 +1,37 @@
+#BFS
+
+
+def bfs(graph, first):  # function for BFS
+    visited = []  # List for visited nodes.
+    queue = [first]  # Initialize a queue
+
+    while queue:  # Creating loop to visit each node
+        m = queue.pop(0)
+        if m not in visited:  # Check if node is not already visited
+            visited.append(m)
+
+            for i in graph[m]:
+                if i not in visited and i not in queue:  # Check if node is not already visited or in the queue
+                    queue.append(i)
+    print(visited)
+
+# Driver Code
+graph = {
+    '5': ['3', '7'],
+    '3': ['2', '4'],
+    '7': ['8'],
+    '2': [],
+    '4': ['8'],
+    '8': []
+}
+print("Following is the Breadth-First Search")
+bfs(graph, '5')    # function calling
+
+
+
+
+#DFS
+
+
+
+
